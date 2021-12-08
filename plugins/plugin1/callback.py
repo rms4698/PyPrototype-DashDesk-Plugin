@@ -25,7 +25,10 @@ plug_in_name = plug_in_name + '_'
 
 @app.callback(Output(plug_in_name + 'display-value', 'children'), Input(plug_in_name + 'dropdown', 'value'))
 def display_value(value):
+    ctx = dash.callback_context
+    print(ctx)
     """ Dropdown value change """
+    print("executed")
     return 'You have selected "{}"'.format(value)
 
 
